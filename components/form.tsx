@@ -163,7 +163,7 @@ const Form = () => {
     <div
       className={`rounded-md ${
         currentType === name.toLowerCase() ? "border-2" : ""
-      } border-gray-50 flex flex-col justify-center items-center cursor-pointer relative w-32 h-32 sm:w-52 sm:h-48`}
+      } border-gray-50 flex flex-col justify-center items-center cursor-pointer relative w-36 h-36 sm:w-52 sm:h-48`}
       onClick={() => setCurrentType(name.toLowerCase())}
     >
       <Image
@@ -176,7 +176,7 @@ const Form = () => {
         priority
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
-      <p className="text-white text-xl absolute bottom-1 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 px-7 rounded-md">
+      <p className="text-white text-xl absolute bottom-1 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 px-4 md:px-7 rounded-md">
         {name}
       </p>
     </div>
@@ -240,7 +240,7 @@ const Form = () => {
       </div>
       <AlertDialog open={open}>
         {isLoading ? (
-          <AlertDialogContent className="scale-75 md:scale-100">
+          <AlertDialogContent className="scale-[.85] md:scale-100">
             <AlertDialogHeader>
               <AlertDialogTitle className="hidden"></AlertDialogTitle>
               <AlertDialogDescription className="hidden"></AlertDialogDescription>
@@ -254,7 +254,7 @@ const Form = () => {
             />
           </AlertDialogContent>
         ) : (
-          <AlertDialogContent className="p-2 scale-[.85] md:scale-100">
+          <AlertDialogContent className="p-2 scale-[.90] md:scale-100">
             <AlertDialogHeader>
               <AlertDialogTitle className="text-center text-xl lg:text-2xl">
                 Your image
