@@ -16,13 +16,15 @@ function CustomImage({ alt, src, className }: Props) {
     <Image
       src={src}
       alt={alt}
-      fill
+      width={500}
+      height={400}
       className={cn(
         "object-cover duration-700 ease-in-out transition-all scale-100 blur-0 grayscale-0",
         loading && "scale-105 blur-2xl grayscale",
         className
       )}
       onLoad={() => setLoading(false)}
+      style={{ clipPath: "inset(0 0 30px 0)" }}
     />
   );
 }

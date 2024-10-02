@@ -15,6 +15,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import CustomImage from "./custom-image";
 
 // Type for category
 type Category = {
@@ -239,7 +240,7 @@ const Form = () => {
       </div>
       <AlertDialog open={open}>
         {isLoading ? (
-          <AlertDialogContent className="scale-75">
+          <AlertDialogContent className="scale-75 md:scale-100">
             <AlertDialogHeader>
               <AlertDialogTitle className="hidden"></AlertDialogTitle>
               <AlertDialogDescription className="hidden"></AlertDialogDescription>
@@ -253,23 +254,14 @@ const Form = () => {
             />
           </AlertDialogContent>
         ) : (
-          <AlertDialogContent className="p-2 scale-[.85]">
+          <AlertDialogContent className="p-2 scale-[.85] md:scale-100">
             <AlertDialogHeader>
               <AlertDialogTitle className="text-center text-xl lg:text-2xl">
                 Your image
               </AlertDialogTitle>
             </AlertDialogHeader>
             <div>
-              <Image
-                alt="image"
-                src={generImage || "/music.jpg"}
-                priority
-                width={500}
-                height={400}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 43vw"
-                className="object-cover rounded-md"
-                style={{ clipPath: "inset(0 0 30px 0)" }}
-              />
+              <CustomImage alt="image" src={generImage || "/music.jpg"} />
             </div>
             <AlertDialogFooter className="-mt-7">
               <AlertDialogCancel
